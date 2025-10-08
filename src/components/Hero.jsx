@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 const Hero = ({ language }) => {
   const content = {
     fr: {
-      title: 'Votreg partenaire de confiance en ingénierie et conseil',
+      title: 'Votre partenaire de confiance en ingénierie et conseil',
       subtitle: 'Excellence en ingénierie civile et conseil technique au Maroc et en Afrique',
       cta: 'Contactez-nous',
       stats: [
