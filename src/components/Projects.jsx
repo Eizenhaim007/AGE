@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import InfraUrbai_Ecole_AlBoustane from '../assets/InfraUrbai_Ecole_AlBoustane.png';
-import Commerciaux_TourCFC from '../assets/Commerciaux_TourCFC.png';
+import InfraUrbai_Ecole_AlBoustane from  '../../assets/InfraUrbai_Ecole_AlBoustane.jpg';
+import Commerciaux_TourCFC from '../../assets/Commerciaux_TourCFC.png';
+
 
 const Projects = ({ language }) => {
   const content = {
