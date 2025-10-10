@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import InfraUrbai_Ecole_AlBoustane from '../assets/InfraUrbai_Ecole_AlBoustane.png';
+import Commerciaux_TourCFC from '../assets/Commerciaux_TourCFC.png';
 
 const Projects = ({ language }) => {
   const content = {
@@ -10,16 +12,12 @@ const Projects = ({ language }) => {
         {
           title: 'Infrastructure Urbaine',
           description: 'Projets d\'aménagement urbain et développement d\'infrastructures',
-          image: 'import myImage from '/assets/InfraUrbai_Ecole_AlBoustane.png; // Urban
-          : alt="Projet Ecole Al Boustane" />          
-
+          image: InfraUrbai_Ecole_AlBoustane // Urban
         },
         {
           title: 'Bâtiments Commerciaux',
           description: 'Conception et réalisation de complexes commerciaux modernes',
-          image: 'import myImage from '/assets/Commerciaux_TourCFC.png';' // Commercial
-          : alt="Projet Tour CFC" />
-        
+          image: Commerciaux_TourCFC // Commercial
         },
         {
           title: 'Projets Industriels',

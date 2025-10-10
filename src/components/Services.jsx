@@ -10,54 +10,53 @@ const Services = ({ language }) => {
       services: [
         {
           icon: ClipboardCheck,
-          title: 'Assistance à la Maîtrise d\'Ouvrage (AMO)',
-          description: 'Assister la maîtrise d’ouvrage depuis le
-lancement du projet jusqu/’à la réalisation de l’ouvrage, en passant par la définition des
-besoins, le montage financier, l’expertise technique et la proposition de solutions 
-innovantes pour les différentes problématiques.'
+          title: "Assistance à la Maîtrise d'Ouvrage (AMO)",
+          description:
+            "Assister la maîtrise d’ouvrage depuis le lancement du projet jusqu’à la réalisation de l’ouvrage, en passant par la définition des besoins, le montage financier, l’expertise technique et la proposition de solutions innovantes pour les différentes problématiques.",
         },
         {
           icon: Building2,
-          title: 'Maîtrise d\'Ouvrage Déléguée (MOD)',
-          description: 'Les maîtres d’ouvrage publics ou privés peuvent nous mandater d’exécuter en leurs noms et pour leurs comptes la totalité de leurs projets TCE. Nous assurons ainsi une gestion complète et proactive des parties prenantes,des coûts, des délais et de la qualité de vos projets.
-'
+          title: "Maîtrise d'Ouvrage Déléguée (MOD)",
+          description:
+            "Les maîtres d’ouvrage publics ou privés peuvent nous mandater d’exécuter en leurs noms et pour leurs comptes la totalité de leurs projets TCE. Nous assurons ainsi une gestion complète et proactive des parties prenantes, des coûts, des délais et de la qualité de vos projets.",
         },
         {
           icon: FileText,
-          title: 'Études Techniques Tout Corps d\'État',
-          description: 'Apporter une solution sur mesure, efficace, cohérente et globale assurant la réussite du projet dans les meilleures conditions de coûts, délais et qualité. Ces études concernent : Bâtiment et Structures, Charpente Métallique, Plomberie et Fluides, Électricité courant fort et courant faible, lots architecturaux, VRD, Barrages et Ports.
-'
+          title: "Études Techniques Tout Corps d'État",
+          description:
+            "Apporter une solution sur mesure, efficace, cohérente et globale assurant la réussite du projet dans les meilleures conditions de coûts, délais et qualité. Ces études concernent : Bâtiment et Structures, Charpente Métallique, Plomberie et Fluides, Électricité courant fort et courant faible, lots architecturaux, VRD, Barrages et Ports.",
         },
         {
           icon: Eye,
-          title: 'Suivi Technique des Travaux',
-          description: 'Assurer la mission de suivie des travaux d’exécution TCE en veillant sur le respect des exigences techniques du projet en contrôlant les travaux réalisés par rapport aux plans d’exécution et documents contractuels.
-'
+          title: "Suivi Technique des Travaux",
+          description:
+            "Assurer la mission de suivi des travaux d’exécution TCE en veillant sur le respect des exigences techniques du projet en contrôlant les travaux réalisés par rapport aux plans d’exécution et documents contractuels.",
         },
         {
           icon: Calendar,
-          title: 'Ordonnancement, Pilotage et Coordination (OPC)',
-          description: 'Piloter et planifier les études et les travaux TCE. Suivre l’avancement, coordonner l’interface entre les différents intervenants, rendre compte au maître d’ouvrage, vérifier les attachements et décomptes tout en respectant le délai et les exigences des marchés.
-'
+          title: "Ordonnancement, Pilotage et Coordination (OPC)",
+          description:
+            "Piloter et planifier les études et les travaux TCE. Suivre l’avancement, coordonner l’interface entre les différents intervenants, rendre compte au maître d’ouvrage, vérifier les attachements et décomptes tout en respectant le délai et les exigences des marchés.",
         },
         {
           icon: Calculator,
-          title: 'Expertise, Conseil et Économie de la Construction',
-          description: 'Optimiser les études et réduire le coût de la construction pour tous les corps d’états, de la conception au DCE, choisir les meilleures solutions et variantes techniques, décrire les matériaux à utiliser, estimer leurs impacts financiers et assurer le suivi financier au cours des travaux.
-'
+          title: "Expertise, Conseil et Économie de la Construction",
+          description:
+            "Optimiser les études et réduire le coût de la construction pour tous les corps d’états, de la conception au DCE, choisir les meilleures solutions et variantes techniques, décrire les matériaux à utiliser, estimer leurs impacts financiers et assurer le suivi financier au cours des travaux.",
         },
         {
           icon: Map,
-          title: 'Études Topographiques Complètes',
-          description: 'Réaliser toutes les études topographiques (Bâtiment, VRD, Routes, Pistes, Barrages, Ouvrages d’Art.)
-'
+          title: "Études Topographiques Complètes",
+          description:
+            "Réaliser toutes les études topographiques (Bâtiment, VRD, Routes, Pistes, Barrages, Ouvrages d’Art).",
         },
         {
           icon: Mountain,
-          title: 'Ingénierie Minière',
-          description: 'Conseils et études techniques en ingénierie minière souterraine et à ciel ouvert.'
-        }
-      ]
+          title: "Ingénierie Minière",
+          description:
+            "Conseils et études techniques en ingénierie minière souterraine et à ciel ouvert.",
+        },
+      ],
     },
     en: {
       title: 'Our Services',
@@ -66,45 +65,45 @@ innovantes pour les différentes problématiques.'
         {
           icon: ClipboardCheck,
           title: 'Project Management Assistance (AMO)',
-          description: 'Strategic and technical support for the success of your projects'
+          description: 'Assist the project owner from launch to completion, including needs definition, financial setup, technical expertise, and innovative solutions for various challenges.',
         },
         {
           icon: Building2,
           title: 'Delegated Project Ownership (MOD)',
-          description: 'Complete management of your construction and infrastructure projects'
+          description: 'Public or private project owners can mandate us to execute all their TCE projects. We ensure complete and proactive management of stakeholders, costs, deadlines, and quality.',
         },
         {
           icon: FileText,
           title: 'Technical Studies All Trades',
-          description: 'Detailed studies for all technical aspects of your projects'
+          description: 'Provide tailored, effective, coherent, and comprehensive solutions ensuring project success under optimal cost, time, and quality conditions. These studies include: Building and Structures, Metal Framework, Plumbing and Fluids, High and Low Voltage Electricity, Architectural lots, VRD, Dams, and Ports.',
         },
         {
           icon: Eye,
           title: 'Technical Work Supervision',
-          description: 'Supervision and quality control of work execution'
+          description: 'Ensure supervision of TCE execution works, monitoring compliance with technical requirements by checking work against execution plans and contractual documents.',
         },
         {
           icon: Calendar,
           title: 'Scheduling, Management and Coordination (OPC)',
-          description: 'Optimization of planning and work coordination'
+          description: 'Manage and schedule TCE studies and works. Track progress, coordinate interfaces between stakeholders, report to the project owner, verify attachments and statements, all while respecting deadlines and market requirements.',
         },
         {
           icon: Calculator,
           title: 'Expertise and Construction Economics',
-          description: 'Cost optimization consulting and technical expertise'
+          description: 'Optimize studies and reduce construction costs for all trades, from design to DCE, select the best solutions and technical variants, describe materials to be used, estimate their financial impact, and ensure financial monitoring during works.',
         },
         {
           icon: Map,
           title: 'Complete Topographic Studies',
-          description: 'High-precision topographic surveys and analyses'
+          description: 'Carry out all topographic studies (Building, VRD, Roads, Tracks, Dams, Engineering Structures).',
         },
         {
           icon: Mountain,
           title: 'Mining Engineering',
-          description: 'Specialized studies and consulting in mining operations'
-        }
-      ]
-    }
+          description: 'Consulting and technical studies in underground and open-pit mining engineering.',
+        },
+      ],
+    },
   };
 
   return (
