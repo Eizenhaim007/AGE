@@ -10,14 +10,16 @@ const Projects = ({ language }) => {
         {
           title: 'Infrastructure Urbaine',
           description: 'Projets d\'aménagement urbain et développement d\'infrastructures',
-          image: 'assets/Infraurb_bg.png' // Urban
-          
+          image: 'import myImage from '/assets/InfraUrbai_Ecole_AlBoustane.png; // Urban
+          : alt="Projet Ecole Al Boustane" />          
 
         },
         {
           title: 'Bâtiments Commerciaux',
           description: 'Conception et réalisation de complexes commerciaux modernes',
-          image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b' // Commercial
+          image: 'import myImage from '/assets/Commerciaux_TourCFC.png';' // Commercial
+          : alt="Projet Tour CFC" />
+        
         },
         {
           title: 'Projets Industriels',

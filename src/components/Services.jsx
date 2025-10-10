@@ -11,42 +11,51 @@ const Services = ({ language }) => {
         {
           icon: ClipboardCheck,
           title: 'Assistance à la Maîtrise d\'Ouvrage (AMO)',
-          description: 'Accompagnement stratégique et technique pour la réussite de vos projets'
+          description: 'Assister la maîtrise d’ouvrage depuis le
+lancement du projet jusqu/’à la réalisation de l’ouvrage, en passant par la définition des
+besoins, le montage financier, l’expertise technique et la proposition de solutions 
+innovantes pour les différentes problématiques.'
         },
         {
           icon: Building2,
           title: 'Maîtrise d\'Ouvrage Déléguée (MOD)',
-          description: 'Gestion complète de vos projets de construction et d\'infrastructure'
+          description: 'Les maîtres d’ouvrage publics ou privés peuvent nous mandater d’exécuter en leurs noms et pour leurs comptes la totalité de leurs projets TCE. Nous assurons ainsi une gestion complète et proactive des parties prenantes,des coûts, des délais et de la qualité de vos projets.
+'
         },
         {
           icon: FileText,
           title: 'Études Techniques Tout Corps d\'État',
-          description: 'Études détaillées pour tous les aspects techniques de vos projets'
+          description: 'Apporter une solution sur mesure, efficace, cohérente et globale assurant la réussite du projet dans les meilleures conditions de coûts, délais et qualité. Ces études concernent : Bâtiment et Structures, Charpente Métallique, Plomberie et Fluides, Électricité courant fort et courant faible, lots architecturaux, VRD, Barrages et Ports.
+'
         },
         {
           icon: Eye,
           title: 'Suivi Technique des Travaux',
-          description: 'Supervision et contrôle qualité de l\'exécution des travaux'
+          description: 'Assurer la mission de suivie des travaux d’exécution TCE en veillant sur le respect des exigences techniques du projet en contrôlant les travaux réalisés par rapport aux plans d’exécution et documents contractuels.
+'
         },
         {
           icon: Calendar,
           title: 'Ordonnancement, Pilotage et Coordination (OPC)',
-          description: 'Optimisation de la planification et coordination des travaux'
+          description: 'Piloter et planifier les études et les travaux TCE. Suivre l’avancement, coordonner l’interface entre les différents intervenants, rendre compte au maître d’ouvrage, vérifier les attachements et décomptes tout en respectant le délai et les exigences des marchés.
+'
         },
         {
           icon: Calculator,
-          title: 'Expertise et Économie de la Construction',
-          description: 'Conseil en optimisation des coûts et expertise technique'
+          title: 'Expertise, Conseil et Économie de la Construction',
+          description: 'Optimiser les études et réduire le coût de la construction pour tous les corps d’états, de la conception au DCE, choisir les meilleures solutions et variantes techniques, décrire les matériaux à utiliser, estimer leurs impacts financiers et assurer le suivi financier au cours des travaux.
+'
         },
         {
           icon: Map,
           title: 'Études Topographiques Complètes',
-          description: 'Relevés et analyses topographiques de haute précision'
+          description: 'Réaliser toutes les études topographiques (Bâtiment, VRD, Routes, Pistes, Barrages, Ouvrages d’Art.)
+'
         },
         {
           icon: Mountain,
           title: 'Ingénierie Minière',
-          description: 'Études et conseil spécialisés en exploitation minière'
+          description: 'Conseils et études techniques en ingénierie minière souterraine et à ciel ouvert.'
         }
       ]
     },
