@@ -6,7 +6,7 @@ const About = ({ language }) => {
   const content = {
     fr: {
       title: 'À Propos',
-      subtitle: 'Excellence et Innovation en Ingénierie',
+      subtitle: 'Excellence et Innovation en Ingénierie Civile',
       description: 'Africa Global Engineering est un cabinet d\'ingénierie et de conseil de premier plan. Nous offrons une expertise multidisciplinaire en ingénierie civile, avec une présence forte au Maroc et à travers l\'Afrique.',
       vision: 'Notre vision est de devenir le partenaire de référence pour tous les projets d\'infrastructure et de construction, en combinant expertise technique, innovation et engagement envers la qualité.',
       values: [
@@ -90,10 +90,10 @@ const About = ({ language }) => {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed text-justify">
               {content[language].description}
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed text-justify">
               {content[language].vision}
             </p>
           </motion.div>
@@ -113,7 +113,7 @@ const About = ({ language }) => {
                 <value.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-[#1A4C8B] mb-3">{value.title}</h3>
-              <p className="text-gray-600">{value.description}</p>
+                {value.description}
             </motion.div>
           ))}
         </div>

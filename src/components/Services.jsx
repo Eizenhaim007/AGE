@@ -139,7 +139,9 @@ const Services = ({ language }) => {
                 <service.icon className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#1A4C8B] mb-3">{service.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+              <p className="text-gray-600 text-sm leading-relaxed text-justify">
+                {service.description}
+              </p>
             </motion.div>
           ))}
         </div>

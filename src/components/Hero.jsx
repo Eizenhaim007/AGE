@@ -11,7 +11,7 @@ const Hero = ({ language }) => {
       cta: 'Contactez-nous',
       stats: [
         { value: '10+', label: 'Années d\'expérience' },
-        { value: '100+', label: 'Projets réalisés' },
+        { value: '20+', label: 'Projets réalisés' },
         { value: '8', label: 'Services spécialisés' }
       ]
     },
