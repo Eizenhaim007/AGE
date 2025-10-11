@@ -7,7 +7,7 @@ const About = ({ language }) => {
     fr: {
       title: 'À Propos',
       subtitle: 'Excellence et Innovation en Ingénierie',
-      description: 'Africa Global Engineering est un cabinet d\'ingénierie et de conseil de premier plan, dirigé par Soufiane Lahlou. Nous offrons une expertise multidisciplinaire en ingénierie civile, avec une présence forte au Maroc et à travers l\'Afrique.',
+      description: 'Africa Global Engineering est un cabinet d\'ingénierie et de conseil de premier plan. Nous offrons une expertise multidisciplinaire en ingénierie civile, avec une présence forte au Maroc et à travers l\'Afrique.',
       vision: 'Notre vision est de devenir le partenaire de référence pour tous les projets d\'infrastructure et de construction, en combinant expertise technique, innovation et engagement envers la qualité.',
       values: [
         {
