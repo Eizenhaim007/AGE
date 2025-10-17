@@ -1,8 +1,9 @@
+// ...existing code...
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ClipboardCheck, Building2, FileText, Eye, Calendar, Calculator, Map, Mountain } from 'lucide-react';
 
-const Services = ({ language }) => {
+const Services = ({ language = 'fr' }) => {
   const content = {
     fr: {
       title: 'Nos Services',
@@ -43,12 +44,6 @@ const Services = ({ language }) => {
           title: "Expertise, Conseil et Économie de la Construction",
           description:
             "Optimiser les études et réduire le coût de la construction pour tous les corps d’états, de la conception au DCE, choisir les meilleures solutions et variantes techniques, décrire les matériaux à utiliser, estimer leurs impacts financiers et assurer le suivi financier au cours des travaux.",
-        },
-        {
-          icon: Map,
-          title: "Études Topographiques Complètes",
-          description:
-            "Réaliser toutes les études topographiques (Bâtiment, VRD, Routes, Pistes, Barrages, Ouvrages d’Art).",
         },
         {
           icon: Mountain,
@@ -135,9 +130,15 @@ const Services = ({ language }) => {
               whileHover={{ y: -5 }}
               className="bg-gradient-to-br from-[#F5F5F5] to-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-gray-100"
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-[#1A4C8B] to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <service.icon className="w-7 h-7 text-white" />
-              </div>
+              {/* render icon only if present; otherwise render a spacer of the same size */}
+              {service.icon ? (
+                <div className="w-14 h-14 bg-gradient-to-br from-[#1A4C8B] to-blue-600 rounded-lg flex items-center justify-center mb-4">
+                  <service.icon className="w-7 h-7 text-white" />
+                </div>
+              ) : (
+                <div className="w-14 h-14 mb-4" aria-hidden="true" />
+              )}
+
               <h3 className="text-lg font-bold text-[#1A4C8B] mb-3">{service.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed text-justify">
                 {service.description}
@@ -151,3 +152,4 @@ const Services = ({ language }) => {
 };
 
 export default Services;
+// ...existing code...
