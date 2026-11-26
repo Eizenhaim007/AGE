@@ -1,0 +1,77 @@
+---
+import { Picture } from 'astro:assets';
+import hero from '../../assets/hero.jpg';
+import Icon from '../components/Icon.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import SiteLayout from './SiteLayout.astro';
+import { content } from '../content/site';
+
+const { locale } = Astro.props;
+const copy = content[locale];
+const serviceIcons = ['clip', 'building', 'file', 'eye', 'calendar', 'chart', 'map', 'mountain'] as const;
+---
+<SiteLayout locale={locale}>
+  <section class="hero" id="hero" tabindex="-1">
+    <div class="hero-backdrop" aria-hidden="true">
+      <Picture src={hero} alt="" formats={['avif', 'webp']} fallbackFormat="webp" widths={[480, 720, 1080, 1440, 1920]} sizes="100vw" loading="eager" fetchpriority="high" />
+    </div>
+    <div class="wrap hero-content">
+      <div class="hero-copy">
+        <p class="eyebrow">{copy.place}</p>
+        <h1>{copy.hero.title}</h1>
+        <p class="hero-description">{copy.hero.description}</p>
+        <div class="hero-actions">
+          <a class="button" href="#contact">{copy.start}</a>
+          <a class="button button-secondary" href="#services">{copy.explore}</a>
+        </div>
+      </div>
+      <p class="image-caption">{copy.imageNote}</p>
+    </div>
+  </section>
+
+  <div class="fact-band">
+    <dl class="wrap facts">
+      {copy.facts.map(({ label, value }) => <div><dt>{label}</dt><dd>{value}</dd></div>)}
+    </dl>
+  </div>
+
+  <section class="section section-services" id="services" tabindex="-1" aria-labelledby="services-title">
+    <div class="wrap">
+      <SectionHeading label={copy.serviceLabel} title={copy.servicesTitle} description={copy.servicesIntro} id="services-title" />
+      <div class="service-grid">
+        {copy.services.map(({ id, title, description }, index) => (
+          <article class="service-card" id={`service-${id}`}>
+            <div class="tile-icon"><Icon name={serviceIcons[index]} /></div>
+            <div><h3>{title}</h3><p>{description}</p></div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Projects locale={locale} />
+
+  <section class="section section-about" id="about" tabindex="-1" aria-labelledby="about-title">
+    <div class="wrap about-layout">
+      <div>
+        <SectionHeading label={copy.aboutLabel} title={copy.aboutTitle} id="about-title" />
+        <p>{copy.aboutIntro}</p>
+        <p>{copy.vision}</p>
+        <ul class="values">
+          {copy.values.map(({ title, description }) => (
+            <li><Icon name="check" /><div><h3>{title}</h3><p>{description}</p></div></li>
+          ))}
+        </ul>
+      </div>
+      <ul class="reasons" id="why-choose-us">
+        {copy.reasons.map(({ title, description }) => (
+          <li><h3>{title}</h3><p>{description}</p></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <Contact locale={locale} />
+</SiteLayout>

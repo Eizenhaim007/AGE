@@ -1,0 +1,28 @@
+---
+import Brand from './Brand.astro';
+import { contacts, content } from '../content/site';
+const { locale } = Astro.props;
+const copy = content[locale];
+---
+<footer class="site-footer">
+  <div class="wrap footer-layout">
+    <div class="footer-brand">
+      <Brand locale={locale} />
+      <p>{copy.place}</p>
+    </div>
+    <nav aria-label={copy.footerNavLabel}>
+      <ul>
+        <li><a href={`${copy.path}#services`}>{copy.serviceLabel}</a></li>
+        <li><a href={`${copy.path}#projects`}>{copy.projectLabel}</a></li>
+        <li><a href={`${copy.path}#about`}>{copy.aboutLabel}</a></li>
+        <li><a href={`${copy.path}#contact`}>{copy.contactLabel}</a></li>
+      </ul>
+    </nav>
+    <address class="footer-contact">
+      <p>{copy.address}<br />{copy.city}</p>
+      <a href={`tel:${contacts.tel}`}>{contacts.phone}</a>
+      <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
+    </address>
+    <p class="footer-legal">© {new Date().getFullYear()} Africa Global Engineering. {copy.rights}</p>
+  </div>
+</footer>
