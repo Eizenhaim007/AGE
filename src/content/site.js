@@ -4,7 +4,8 @@ export const contacts = {
   "phone": "+212 6 62 600 529",
   "tel": "+212662600529",
   "whatsapp": "https://wa.me/212662600529",
-  "directions": "https://www.google.com/maps/search/?api=1&query=45%20Rue%20Atlas%2C%20Maarif%2C%20Casablanca%2C%20Maroc"
+  "directions": "https://www.google.com/maps/search/?api=1&query=45%20Rue%20Atlas%2C%20Maarif%2C%20Casablanca%2C%20Maroc",
+  "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8447891234567!2d-7.6298!3d33.5731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM0JzIzLjIiTiA3wrAzNyc0Ny4zIlc!5e0!3m2!1sen!2sma!4v1234567890"
 };
 
 export const content = {
@@ -182,7 +183,7 @@ export const content = {
       }
     ],
     "contactTitle": "Parlons de votre projet",
-    "contactIntro": "Présentez votre besoin et choisissez comment vous souhaitez être recontacté.",
+    "mapTitle": "Localisation du bureau d’AGE à Casablanca",
     "directTitle": "Contacter AGE directement",
     "address": "45 Rue Atlas, étage 4, numéro 16",
     "city": "Maarif, Casablanca, Maroc",
@@ -391,7 +392,7 @@ export const content = {
       }
     ],
     "contactTitle": "Discuss your project",
-    "contactIntro": "Tell us what you need and how you would like us to get back to you.",
+    "mapTitle": "Location of the AGE office in Casablanca",
     "directTitle": "Contact AGE directly",
     "address": "45 Rue Atlas, 4th floor, unit 16",
     "city": "Maarif, Casablanca, Morocco",

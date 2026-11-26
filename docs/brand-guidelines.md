@@ -16,6 +16,6 @@ Keep the primary inquiry action easy to find. Project cards share equal columns,
 
 ## Inquiry experience
 
-Show the direct WhatsApp, call, and email options alongside the inquiry form. Require a full name, reply method, its matching contact value, and a message. Keep company and project type optional. Preserve values on errors, present feedback beside the relevant field, and use the localized confirmation after acceptance.
+Show the direct WhatsApp, call, and email options. When the inquiry form is enabled, require a full name, reply method, its matching contact value, and a message. Keep company and project type optional. Preserve values on errors, present feedback beside the relevant field, and use the localized confirmation after acceptance.
 
 Update these guidelines and tokens together when an approved brand decision changes.

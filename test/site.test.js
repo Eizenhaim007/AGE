@@ -17,7 +17,7 @@ test('French and English expose the same service and project taxonomy', () => {
 });
 
 for (const locale of locales) {
-  test(`${locale.name} build preserves anchors, assets and lead fields`, () => {
+  test(`${locale.name} build preserves anchors, assets and direct contact with a map`, () => {
     const html = readFileSync(`dist/${locale.route}`, 'utf8');
     assert.match(html, new RegExp(`<html lang="${locale.name}"`));
     assert.equal([...html.matchAll(/<h1(?:>| )/g)].length, 1);
@@ -27,12 +27,8 @@ for (const locale of locales) {
     for (const [script] of html.matchAll(/<script[^>]*type="module"[^>]*>/g)) {
       assert.match(script, /src="\/_astro\//, 'Executable scripts must be compatible with the self-only CSP');
     }
-    assert.match(html, /data-netlify="true"/);
-    assert.match(html, new RegExp(`name="form-name" value="age-lead-${locale.name}"`));
-    for (const field of ['full-name', 'company', 'project-type', 'reply-method', 'email', 'phone', 'message']) {
-      assert.ok(html.includes(`name="${field}"`), `Missing lead field ${field}`);
-    }
-    assert.ok(html.includes(`action="${content[locale.name].confirmation}"`));
+    assert.ok(!html.includes('name="form-name"'), 'The inquiry form must stay unpublished until email delivery is verified');
+    assert.match(html, /<iframe\b[^>]*src="https:\/\/www\.google\.com\/maps\/embed\?/);
     for (const address of [contacts.email, contacts.director]) {
       assert.ok(html.includes(`href="mailto:${address}"`));
     }

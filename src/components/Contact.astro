@@ -1,5 +1,4 @@
 ---
-import InquiryForm from './InquiryForm.astro';
 import Icon from './Icon.astro';
 import SectionHeading from './SectionHeading.astro';
 import { contacts, content } from '../content/site';
@@ -10,7 +9,7 @@ const copy = content[locale];
 <section class="section section-contact" id="contact" tabindex="-1" aria-labelledby="contact-title">
   <div class="wrap contact-layout">
     <div>
-      <SectionHeading label={copy.contactLabel} title={copy.contactTitle} description={copy.contactIntro} id="contact-title" />
+      <SectionHeading label={copy.contactLabel} title={copy.contactTitle} id="contact-title" />
       <div class="contact-details">
         <h3>{copy.directTitle}</h3>
         <div class="direct-actions">
@@ -25,6 +24,12 @@ const copy = content[locale];
         </address>
       </div>
     </div>
-    <InquiryForm locale={locale} />
+    <iframe
+      class="contact-map"
+      src={contacts.mapEmbed}
+      title={copy.mapTitle}
+      loading="lazy"
+      allowfullscreen
+    ></iframe>
   </div>
 </section>

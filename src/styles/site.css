@@ -87,6 +87,14 @@ h3 { font-size: 1.2rem; line-height: 1.25; letter-spacing: -.025em; }
 .reasons { display: grid; gap: 0; border-top: 1px solid var(--line); }
 .reasons li { border-bottom: 1px solid var(--line); padding-block: 15px; }
 .section-contact .section-heading { margin-bottom: 25px; }
+.contact-map {
+  display: block;
+  width: 100%;
+  height: clamp(320px, 37vw, 450px);
+  border: 0;
+  border-radius: var(--radius-card);
+  background: var(--pale);
+}
 .contact-details { display: grid; gap: 18px; padding-block: 7px 20px; }
 .contact-details h3 { font-size: 1.13rem; }
 .direct-actions { display: flex; flex-wrap: wrap; gap: 8px; }
