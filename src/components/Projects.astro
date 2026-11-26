@@ -1,0 +1,44 @@
+---
+import { Picture } from 'astro:assets';
+import school from '../../assets/InfraUrbai_Ecole_AlBoustane.jpg';
+import tower from '../../assets/Commerciaux_TourCFC.png';
+import Icon from './Icon.astro';
+import SectionHeading from './SectionHeading.astro';
+import { content } from '../content/site';
+
+const { locale } = Astro.props;
+const copy = content[locale];
+const images = { school, tower };
+---
+<section class="section section-projects" id="projects" tabindex="-1" aria-labelledby="project-title">
+  <div class="wrap">
+    <SectionHeading label={copy.projectLabel} title={copy.projectTitle} description={copy.projectIntro} id="project-title" />
+    <div class="project-grid">
+      {copy.projects.map((project) => {
+        const image = project.image && images[project.image];
+        return (
+          <article class="project-card" data-project={project.id}>
+            <div class:list={['project-media', !image && 'project-placeholder']}>
+              {image ? (
+                <Picture
+                  src={image}
+                  alt={project.alt}
+                  formats={['avif', 'webp']}
+                  fallbackFormat="webp"
+                  widths={[320, 520, 780, 1000].filter((width) => width <= image.width)}
+                  sizes="(max-width: 700px) calc(100vw - 36px), (max-width: 1420px) 43vw, 630px"
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : <Icon name={project.id === 'mining' ? 'mountain' : 'building'} size={54} />}
+            </div>
+            <div class="project-copy">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>

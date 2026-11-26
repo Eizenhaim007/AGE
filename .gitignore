@@ -32,3 +32,6 @@ coverage/
 # Ignore lock files if not needed
 # package-lock.json
 yarn.lock
+
+# Astro development metadata
+.astro/

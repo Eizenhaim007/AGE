@@ -1,0 +1,12 @@
+---
+import { content } from '../content/site';
+const { locale } = Astro.props;
+const copy = content[locale];
+---
+<a class="brand" href={copy.path} translate="no">
+  <span class="brand-mark" aria-hidden="true">AGE</span>
+  <span class="brand-name">
+    <strong>{copy.name}</strong>
+    <small>{copy.tagline}</small>
+  </span>
+</a>

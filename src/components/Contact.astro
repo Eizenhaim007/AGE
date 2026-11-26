@@ -1,0 +1,35 @@
+---
+import Icon from './Icon.astro';
+import SectionHeading from './SectionHeading.astro';
+import { contacts, content } from '../content/site';
+
+const { locale } = Astro.props;
+const copy = content[locale];
+---
+<section class="section section-contact" id="contact" tabindex="-1" aria-labelledby="contact-title">
+  <div class="wrap contact-layout">
+    <div>
+      <SectionHeading label={copy.contactLabel} title={copy.contactTitle} id="contact-title" />
+      <div class="contact-details">
+        <h3>{copy.directTitle}</h3>
+        <div class="direct-actions">
+          <a href={contacts.whatsapp} target="_blank" rel="noopener noreferrer"><Icon name="chat" size={19} /> WhatsApp</a>
+          <a href={`tel:${contacts.tel}`}><Icon name="phone" size={19} /> {copy.call}</a>
+          <a href={`mailto:${contacts.email}`}><Icon name="mail" size={19} /> {copy.email}</a>
+        </div>
+        <address>
+          <div><Icon name="location" /><p>{copy.address}<br />{copy.city}<br /><a href={contacts.directions} target="_blank" rel="noopener noreferrer">{copy.directions}</a></p></div>
+          <div><Icon name="phone" /><a href={`tel:${contacts.tel}`}>{contacts.phone}</a></div>
+          <div><Icon name="mail" /><p class="contact-emails"><a href={`mailto:${contacts.email}`}>{contacts.email}</a><a href={`mailto:${contacts.director}`}>{contacts.director}</a></p></div>
+        </address>
+      </div>
+    </div>
+    <iframe
+      class="contact-map"
+      src={contacts.mapEmbed}
+      title={copy.mapTitle}
+      loading="lazy"
+      allowfullscreen
+    ></iframe>
+  </div>
+</section>

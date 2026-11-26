@@ -1,0 +1,16 @@
+---
+import { content } from '../content/site';
+import SiteLayout from '../layouts/SiteLayout.astro';
+const { locale } = Astro.props;
+const copy = content[locale];
+---
+<SiteLayout locale={locale} confirmation>
+  <section class="section confirmation">
+    <div class="wrap">
+      <p class="eyebrow">{copy.contactLabel}</p>
+      <h1>{copy.confirmTitle}</h1>
+      <p>{copy.confirmDescription}</p>
+      <a class="button" href={copy.path}>{copy.backHome}</a>
+    </div>
+  </section>
+</SiteLayout>

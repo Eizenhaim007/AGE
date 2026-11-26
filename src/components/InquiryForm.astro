@@ -1,0 +1,82 @@
+---
+import { content } from '../content/site';
+const { locale } = Astro.props;
+const copy = content[locale];
+const fields = copy.form;
+const name = `age-lead-${locale}`;
+---
+<form
+  id="inquiry"
+  class="lead-form"
+  name={name}
+  method="POST"
+  action={copy.confirmation}
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  data-inquiry
+  data-failure={fields.error}
+  data-success={fields.ok}
+  data-working={fields.working}
+  data-required={fields.required}
+  data-invalid-email={fields.invalidEmail}
+  data-invalid-phone={fields.invalidPhone}
+>
+  <input type="hidden" name="form-name" value={name} />
+  <p hidden><label>Leave this field blank <input name="bot-field" autocomplete="off" tabindex="-1" /></label></p>
+  <h3>{fields.title}</h3>
+  <p class="form-note">{copy.required}</p>
+  <p hidden class="error-summary" tabindex="-1">{fields.invalidHeading}</p>
+  <noscript><p class="form-note">{fields.noScript}</p></noscript>
+
+  <div class="fields-pair">
+    <div class="field">
+      <label for="full-name">{fields.name} <span aria-hidden="true">*</span></label>
+      <input id="full-name" name="full-name" required autocomplete="name" maxlength="120" aria-describedby="full-name-error" />
+      <p id="full-name-error" class="field-error" hidden></p>
+    </div>
+    <div class="field">
+      <label for="company">{fields.company} <span>({fields.optional})</span></label>
+      <input id="company" name="company" autocomplete="organization" maxlength="140" />
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="project-type">{fields.project} <span>({fields.optional})</span></label>
+    <select id="project-type" name="project-type">
+      <option value={fields.unsure}>{fields.unsure}</option>
+      {copy.services.map(({ shortTitle }) => <option>{shortTitle}</option>)}
+      <option>{fields.other}</option>
+    </select>
+  </div>
+
+  <fieldset>
+    <legend>{fields.method} <span aria-hidden="true">*</span></legend>
+    <div class="reply-options">
+      <label><input type="radio" name="reply-method" value="email" checked required /> {fields.email}</label>
+      <label><input type="radio" name="reply-method" value="phone" /> {fields.phone}</label>
+    </div>
+  </fieldset>
+  <div class="field" data-reply="email">
+    <label for="email">{fields.email}</label>
+    <input id="email" name="email" type="email" autocomplete="email" maxlength="254" aria-describedby="email-error" />
+    <p id="email-error" class="field-error" hidden></p>
+  </div>
+  <div class="field" data-reply="phone">
+    <label for="phone">{fields.phone}</label>
+    <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="32" aria-describedby="phone-error" />
+    <p id="phone-error" class="field-error" hidden></p>
+  </div>
+
+  <div class="field">
+    <label for="message">{fields.message} <span aria-hidden="true">*</span></label>
+    <textarea id="message" name="message" rows="4" maxlength="3000" placeholder={fields.placeholder} required aria-describedby="message-error"></textarea>
+    <p id="message-error" class="field-error" hidden></p>
+  </div>
+  <button class="button" type="submit">{copy.send}</button>
+  <p class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+</form>
+<script>
+  import { enhanceInquiry } from '../lib/inquiry';
+  const form = document.querySelector<HTMLFormElement>('[data-inquiry]');
+  if (form) enhanceInquiry(form);
+</script>

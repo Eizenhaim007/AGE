@@ -1,0 +1,62 @@
+---
+import { getImage } from 'astro:assets';
+import hero from '../../assets/hero.jpg';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { contacts, content } from '../content/site';
+import '../styles/tokens.css';
+import '../styles/site.css';
+
+const { locale, confirmation = false } = Astro.props;
+const copy = content[locale];
+const canonical = new URL(confirmation ? copy.confirmation : copy.path, Astro.site);
+const socialImage = confirmation ? null : await getImage({ src: hero, width: 1200, height: 630, fit: 'cover', format: 'jpeg' });
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: copy.name,
+  url: canonical.href,
+  telephone: contacts.tel,
+  email: contacts.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '45 Rue Atlas, étage 4, numéro 16',
+    addressLocality: 'Casablanca',
+    addressCountry: 'MA',
+  },
+};
+---
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1a4c8b" />
+    <title>{confirmation ? `${copy.confirmTitle} | ${copy.name}` : copy.seoTitle}</title>
+    <meta name="description" content={confirmation ? copy.confirmDescription : copy.seoDescription} />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href={canonical.href} />
+    {confirmation ? <meta name="robots" content="noindex" /> : <>
+      <link rel="alternate" hreflang="fr" href={new URL('/', Astro.site).href} />
+      <link rel="alternate" hreflang="en" href={new URL('/en/', Astro.site).href} />
+      <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site).href} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content={copy.name} />
+      <meta property="og:locale" content={locale === 'fr' ? 'fr_MA' : 'en_GB'} />
+      <meta property="og:title" content={copy.seoTitle} />
+      <meta property="og:description" content={copy.seoDescription} />
+      <meta property="og:url" content={canonical.href} />
+      {socialImage && <meta property="og:image" content={new URL(socialImage.src, Astro.site).href} />}
+      <meta name="twitter:card" content="summary_large_image" />
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)}></script>
+    </>}
+  </head>
+  <body>
+    <a class="skip" href="#main">{copy.skip}</a>
+    <Header locale={locale} home={!confirmation} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>
